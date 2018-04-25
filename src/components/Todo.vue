@@ -5,6 +5,7 @@
       label="name"
       :options="$store.state.status"
       v-model="todo.status"
+      @input="statusChange({todo})"
       ></v-select>
       <span >{{todo.text}} before {{todo.dueDate | moment("DD/MM/YYYY")}}</span>
 
@@ -26,6 +27,7 @@ export default {
   },
   methods: {
     ...mapMutations([
+      'statusChange',
       'deleteTodo',
     ]),
   },

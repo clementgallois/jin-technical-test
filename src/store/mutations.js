@@ -28,8 +28,8 @@ export const mutations = {
   deleteTodo(state, { todo }) {
     state.todos.splice(state.todos.indexOf(todo), 1);
   },
-  statusChange(state, { todo, value }) {
-    todo.status = value;
+  statusChange(state, { todo }) {
+    todo.status = todo.status;
   },
   clearCompleted(state) {
     state.todos = state.todos.filter(todo => !todo.done);
